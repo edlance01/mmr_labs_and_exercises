@@ -1,0 +1,305 @@
+/* Full-height container */
+.container-fluid {
+    height: 100vh;
+}
+
+html {
+    font-size: 14px; /* Base font size */
+    font-family: Arial, sans-serif; /* Use a consistent font */
+    color: #333; /* Default text color */
+}
+
+
+
+#response-container {
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+}
+
+.response pre {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.textarea-container {
+    position: relative; /* Establishes a positioning context for the button */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it spans full width */
+}
+
+
+
+
+.history-sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    padding-bottom: 100px;
+    width: 25%;
+    max-width: 300px;
+}
+
+/* Container for New Chat button to keep it at the top */
+.new-chat-container {
+    margin-bottom: 15px; /* Space below the New Chat button */
+}
+
+/* Button and icon styling */
+#btn-chat {
+    background-color: #bec2c3; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.chat-icon{
+     width: 16px;
+    height: 16px;
+    margin-right: 5px;
+
+}
+#btn-chat:hover {
+    background-color: #89968b;
+}
+
+.chat-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+}
+
+/* Remaining styling for history sidebar */
+#hx-title {
+    font-weight: bold;
+}
+
+#history-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-top: 10px; /* Adds space between "Recent" title and history list */
+}
+
+.logo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+    z-index: 1001;
+    
+}
+
+.logo-container {
+    text-align: left;
+    padding-bottom: 10px; /* space between logo and history title */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 20px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center children horizontally */
+    width: 100%;           /* Ensure it takes full width */
+}
+
+
+.input-form {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* Custom styles for the hx-btn button */
+#hx-btn {
+    background-color:  #bec2c3; 
+    color:white; 
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for size */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+/* Change color on hover */
+#hx-btn:hover {
+    background-color: #89968b; /* Darker green on hover */
+}
+
+.position-relative {
+    position: relative; /* Establishes a positioning context for absolute positioning */
+}
+
+#send-btn {
+    position: absolute; /* Position it relative to .textarea-container */
+    right: 10px; /* Adjust spacing from the right edge */
+    top: 50%; /* Center vertically within the textarea */
+    transform: translateY(-50%); /* Adjust for perfect vertical alignment */
+    padding: 5px 10px; /* Adjust padding for button size */
+    height: auto; /* Automatically adjusts height */
+    border-radius: 5px; /* Match button styling */
+    background-color: #007bff; /* Custom button color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Add pointer on hover */
+}
+
+
+
+
+ #user_input {
+    width: 100%; /* Make it take full width of the container */
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 10px 50px 10px 10px; /* Add right padding for the button */
+    resize: none;
+    outline: none; /* Removes the default outline on focus */
+    overflow: hidden;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+
+
+/* Ensure button aligns well beside the textarea */
+/* .input-form {
+    display: flex;
+    align-items: center;
+} */
+
+form {
+    margin-bottom: 60px; /* add margin to the bottom of the form to prevent overlap */
+}
+
+#label-container {
+    font-size: 1.5em;      /* Increase font size */
+    margin-bottom: 10px;   /* Add space below */
+    text-align: center;     /* Center text */
+    display: none;         /* Initially hidden */
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/* Custom blue button styles */
+.btn-custom-blue {
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none; /* Remove border */
+}
+
+.btn-custom-blue:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+    color: white;
+}
+
+.btn-custom-blue:focus,
+.btn-custom-blue:active {
+    background-color: #004494; /* Even darker blue for active/focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Blue shadow */
+    color: white;
+    outline: none; /* Remove default outline */
+}
+
+.query-container {
+    display: flex;
+    justify-content: flex-end;      /* Aligns .query to the right within its container */
+}
+
+.query {
+    display: inline-block;
+    width: fit-content;             /* Shrinks to fit content */
+    max-width: 100%;                /* Prevents overflow of container */
+    word-wrap: break-word;          /* Wraps long text */
+    text-align: right;              /* Aligns text inside the .query box */
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+
+
+/* Right-aligning the text in the query */
+.query span {
+    display: inline-block;
+    text-align: right;
+    width: 100%; /* Forces alignment of text to the right */
+}
+
+/* Response styling */
+.response {
+    font-size: inherit; /* Inherit font size from parent (or html base size) */
+    font-family: inherit; /* Use the same font family as textarea */
+    color: #333; /* Match the color of the text area */
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word; /* Handle long text */
+    white-space: pre-wrap; /* Preserve new lines, like textarea */
+}
+
+
+/* Space between each entry (query + response) */
+.entry {
+    margin-bottom: 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 150px; /* Set width as needed */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 5px 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 5px 10px; /* Reduced padding for a smaller button */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #333;
+    text-decoration: none;
+    width: auto; /* Change width to auto to fit content */
+    text-align: left; /* Align text to the left */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Ensures dropdown starts hidden */
+#popup-menu {
+    display: none; /* Initially hidden */
+}
+
+

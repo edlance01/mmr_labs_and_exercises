@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="chat-box w-100">
+    <div id="response-container" class="mb-3 p-3 rounded">
+    <!-- Display previous responses -->
+    {% for entry in history | reverse %}
+        <div class="entry mb-4">
+            <!-- Query Section -->
+            <div class="query-container">
+                <div class="query text-right">
+                    <span>{{ entry.user | nl2br }}</span>
+                </div>
+            </div>
+    
+            <!-- Response Section -->
+            <div class="response">
+                <pre><strong>Response:</strong> {{ entry.response }}</pre>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+    <form action="/" method="post" class="input-form form-inline" id="chat-form">
+        <div class="form-group w-100 position-relative">
+            <div id="label-container" class="hidden">How can I help you today?</div>
+            <div class="textarea-container d-flex flex-column">
+                <textarea name="user_input" id="user_input" rows="2" 
+                        class="form-control w-100 mb-2" 
+                        placeholder="Type your message here..."></textarea>
+                <button type="submit" class="btn btn-primary mt-2" id="send-btn">Send</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script src="static/js/index.js"></script>
+
+{% endblock %}

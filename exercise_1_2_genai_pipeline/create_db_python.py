@@ -64,6 +64,7 @@ def create_tables():
                     CREATE TABLE IF NOT EXISTS text_chunks (
                         pk SERIAL PRIMARY KEY,         -- Unique identifier for text chunks
                         text TEXT NOT NULL,            -- Text content of the chunk
+                        text_summary TEXT, -- Summary of the text chunk
                         file_id INTEGER REFERENCES complete_files(pk) ON DELETE CASCADE, 
                                                         -- Foreign key referencing `complete_files`
                         is_vectorized BOOLEAN DEFAULT FALSE -- Indicates if the chunk is vectorized

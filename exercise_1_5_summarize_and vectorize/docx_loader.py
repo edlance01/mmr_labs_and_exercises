@@ -1,7 +1,8 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from docx import Document as DocxDocument
 from mmr_dao import MMR_DAO
-
+from summary import TextSummary
+from vectorization import Vectorize
 
 class DocxLoader():
 
@@ -39,6 +40,13 @@ class DocxLoader():
 
         print(f"Document Chunks stored in database, file id is:{file_id}") 
 
+        # Summarize
+        text_summary_dict = TextSummary().create_summary()
+
+        # Vectorize
+        Vectorize().create_and_store_embeddings(text_summary_dict, "text")
+
+        print("Finished, your document has been loaded, chunked, stored in database, summarized, and the summary vectorized and stored in the vector store.")
 
 
 # Example usage

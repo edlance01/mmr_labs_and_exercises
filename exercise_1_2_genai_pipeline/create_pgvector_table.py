@@ -60,8 +60,7 @@ class PGVectorTable:
                         pk SERIAL PRIMARY KEY,        -- Auto-incrementing primary key
                         vector VECTOR(1536),         -- Vector column for embeddings (1536 dimensions)
                         chunk_type VARCHAR(10) NOT NULL, -- Type of chunk (e.g., text, image)
-                        chunk_id INTEGER NOT NULL,     -- Foreign key referencing a chunk
-                        FOREIGN KEY (chunk_id) REFERENCES complete_files(pk) ON DELETE CASCADE  -- Add this line
+                        chunk_id INTEGER NOT NULL   -- Reference to pk from respective chunk table   
                     );
                     """
                 )
